@@ -1,0 +1,23 @@
+{
+  "name": "loja-vitual-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidgabriellm/meu-esporte-loja-vitual-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidgabriellm/meu-esporte-loja-vitual-backend/issues"
+  },
+  "homepage": "https://github.com/davidgabriellm/meu-esporte-loja-vitual-backend#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
