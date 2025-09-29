@@ -16,8 +16,10 @@ class OrderItem extends Model {
       },
       {
         sequelize,
-        modelName: "OrderItem",
-        tableName: "OrderItems" 
+         name: {
+          singular: "orderItem",
+          plural: "orderItems",
+        }, 
       }
     );
   }

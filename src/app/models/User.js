@@ -14,22 +14,24 @@ class User extends Model {
           type: DataTypes.STRING,
           unique: true,
         },
-        password: DataTypes.STRING,
+        password_hash: DataTypes.STRING,
         avatar: DataTypes.STRING,
       },
       {
         sequelize,
-        modelName: "User",
-        tableName: "Users", 
+        name: {
+          singular: "user",
+          plural: "users",
+        },
       }
     );
   }
 
-   static associate(models) {
+  static associate(models) {
     this.hasMany(models.Address, { foreignKey: "userId" });
     this.hasMany(models.Order, { foreignKey: "userId" });
     this.hasMany(models.CartItem, { foreignKey: "userId" });
   }
 }
 
-export default User
+export default User;

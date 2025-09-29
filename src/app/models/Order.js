@@ -15,8 +15,10 @@ class Order extends Model {
       },
       {
         sequelize,
-        modelName: "Order",
-        tableName: "Orders" 
+         name: {
+          singular: "order",
+          plural: "orders",
+        },
       }
     );
   }

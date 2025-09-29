@@ -14,13 +14,14 @@ class Address extends Model {
         city: DataTypes.STRING,
         state: DataTypes.STRING,
         postalCode: DataTypes.STRING,
-        country: DataTypes.STRING,
         isDefault: DataTypes.BOOLEAN
       },
       {
         sequelize,
-        modelName: "Address",
-        tableName: "Addresses" 
+        name: {
+          singular: "address",
+          plural: "addresses",
+        },
       }
     );
   }

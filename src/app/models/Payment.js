@@ -16,8 +16,10 @@ class Payment extends Model {
       },
       {
         sequelize,
-        modelName: "Payment",
-        tableName: "Payments",
+         name: {
+          singular: "payment",
+          plural: "payments",
+        },
       }
     );
   }

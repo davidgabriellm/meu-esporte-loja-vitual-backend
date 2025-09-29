@@ -14,8 +14,10 @@ class Category extends Model {
       },
       {
         sequelize,
-        modelName: "Category",
-        tableName: "Categories",
+         name: {
+          singular: "category",
+          plural: "categories",
+        },
       }
     );
   }

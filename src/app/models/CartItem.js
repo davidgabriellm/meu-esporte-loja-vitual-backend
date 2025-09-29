@@ -15,8 +15,10 @@ class CartItem extends Model {
       },
       {
         sequelize,
-        modelName: "CartItem",
-        tableName: "CartItems" 
+         name: {
+          singular: "cartItem",
+          plural: "cartItems",
+        },
       }
     );
   }

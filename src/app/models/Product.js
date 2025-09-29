@@ -18,8 +18,10 @@ class Product extends Model {
       },
       {
         sequelize,
-        modelName: "Product",
-        tableName: "Products" 
+         name: {
+          singular: "product",
+          plural: "products",
+        },
       }
     );
   }
