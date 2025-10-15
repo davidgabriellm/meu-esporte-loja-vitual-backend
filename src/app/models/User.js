@@ -1,4 +1,5 @@
 import { Model, DataTypes } from "sequelize";
+import bcrypt from "bcrypt"; // mais seguro no Windows
 
 class User extends Model {
   static init(sequelize) {
@@ -9,22 +10,48 @@ class User extends Model {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4,
         },
-        name: DataTypes.STRING,
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
         email: {
           type: DataTypes.STRING,
           unique: true,
+          allowNull: false,
         },
-        password_hash: DataTypes.STRING,
-        avatar: DataTypes.STRING,
+        password: {
+          type: DataTypes.VIRTUAL, 
+          allowNull: false,       
+        },
+        password_hash: {
+          type: DataTypes.STRING,
+          allowNull: false,     
+        },
+        avatar: {
+          type: DataTypes.STRING,
+          allowNull: true,
+        },
       },
       {
         sequelize,
-        name: {
-          singular: "user",
-          plural: "users",
-        },
+        modelName: "User",
+        tableName: "users",
       }
     );
+
+    
+    this.addHook("beforeSave", async (user) => {
+      if (user.password) {
+        user.password_hash = await bcrypt.hash(user.password, 8);
+      }
+    });
+
+    return this;
+  }
+
+  // Comparar senha enviada com hash
+  checkPassword(password) {
+    return bcrypt.compare(password, this.password_hash);
   }
 
   static associate(models) {
