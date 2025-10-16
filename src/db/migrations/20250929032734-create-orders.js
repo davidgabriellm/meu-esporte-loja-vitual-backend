@@ -10,15 +10,15 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal("uuid_generate_v4()"),
       },
-      userId: {
+      user_id: {
         type: Sequelize.UUID,
         references: { model: "users", key: "id" },
         onDelete: "CASCADE",
       },
       total: { type: Sequelize.DECIMAL(10, 2), defaultValue: 0 },
       status: { type: Sequelize.STRING, defaultValue: "pending" },
-      createdAt: { allowNull: false, type: Sequelize.DATE },
-      updatedAt: { allowNull: false, type: Sequelize.DATE },
+      created_at: { allowNull: false, type: Sequelize.DATE },
+      updated_at: { allowNull: false, type: Sequelize.DATE },
     });
   },
 

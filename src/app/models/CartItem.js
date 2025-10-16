@@ -9,8 +9,8 @@ class CartItem extends Model {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4
         },
-        userId: DataTypes.UUID,
-        productId: DataTypes.UUID,
+        user_id: DataTypes.UUID,
+        product_id: DataTypes.UUID,
         quantity: DataTypes.INTEGER
       },
       {
@@ -24,8 +24,8 @@ class CartItem extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: "userId" });
-    this.belongsTo(models.Product, { foreignKey: "productId" });
+    this.belongsTo(models.User, { foreignKey: "user_id" });
+    this.belongsTo(models.Product, { foreignKey: "product_id" });
   }
 }
 

@@ -9,7 +9,7 @@ class Payment extends Model {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4,
         },
-        orderId: DataTypes.UUID,
+        order_id: DataTypes.UUID,
         method: DataTypes.STRING,
         amount: DataTypes.DECIMAL(10, 2),
         status: DataTypes.STRING,
@@ -25,7 +25,7 @@ class Payment extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Order, { foreignKey: "orderId" });
+    this.belongsTo(models.Order, { foreignKey: "order_id" });
   }
 }
 

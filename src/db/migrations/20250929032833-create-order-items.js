@@ -10,12 +10,12 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal("uuid_generate_v4()"),
       },
-      orderId: {
+      order_id: {
         type: Sequelize.UUID,
         references: { model: "orders", key: "id" },
         onDelete: "CASCADE",
       },
-      productId: {
+      product_id: {
         type: Sequelize.UUID,
         references: { model: "products", key: "id" },
         onDelete: "SET NULL",
@@ -26,8 +26,8 @@ module.exports = {
         allowNull: false,
         defaultValue: 0,
       },
-      createdAt: { allowNull: false, type: Sequelize.DATE },
-      updatedAt: { allowNull: false, type: Sequelize.DATE },
+      created_at: { allowNull: false, type: Sequelize.DATE },
+      updated_at: { allowNull: false, type: Sequelize.DATE },
     });
   },
 

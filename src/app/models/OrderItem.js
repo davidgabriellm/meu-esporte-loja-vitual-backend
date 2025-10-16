@@ -9,8 +9,8 @@ class OrderItem extends Model {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4
         },
-        orderId: DataTypes.UUID,
-        productId: DataTypes.UUID,
+        order_id: DataTypes.UUID,
+        product_id: DataTypes.UUID,
         quantity: DataTypes.INTEGER,
         price: DataTypes.DECIMAL(10, 2)
       },
@@ -25,8 +25,8 @@ class OrderItem extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Order, { foreignKey: "orderId" });
-    this.belongsTo(models.Product, { foreignKey: "productId" });
+    this.belongsTo(models.Order, { foreignKey: "order_id" });
+    this.belongsTo(models.Product, { foreignKey: "product_id" });
   }
 }
 

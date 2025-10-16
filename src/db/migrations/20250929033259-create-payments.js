@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal("uuid_generate_v4()"),
       },
-      orderId: {
+      order_id: {
         type: Sequelize.UUID,
         references: { model: "orders", key: "id" },
         onDelete: "CASCADE",
@@ -18,8 +18,8 @@ module.exports = {
       method: { type: Sequelize.STRING },
       amount: { type: Sequelize.DECIMAL(10, 2) },
       status: { type: Sequelize.STRING, defaultValue: "pending" },
-      createdAt: { allowNull: false, type: Sequelize.DATE },
-      updatedAt: { allowNull: false, type: Sequelize.DATE },
+      created_at: { allowNull: false, type: Sequelize.DATE },
+      updated_at: { allowNull: false, type: Sequelize.DATE },
     });
   },
 

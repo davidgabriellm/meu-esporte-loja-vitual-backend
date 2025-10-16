@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.literal("uuid_generate_v4()"),
       },
-      userId: {
+      user_id: {
         type: Sequelize.UUID,
         references: { model: "users", key: "id" },
         onDelete: "CASCADE",
@@ -19,9 +19,9 @@ module.exports = {
       city: { type: Sequelize.STRING },
       state: { type: Sequelize.STRING },
       postalCode: { type: Sequelize.STRING },
-      isDefault: { type: Sequelize.BOOLEAN, defaultValue: false },
-      createdAt: { allowNull: false, type: Sequelize.DATE },
-      updatedAt: { allowNull: false, type: Sequelize.DATE },
+      is_default: { type: Sequelize.BOOLEAN, defaultValue: false },
+      created_at: { allowNull: false, type: Sequelize.DATE },
+      updated_at: { allowNull: false, type: Sequelize.DATE },
     });
   },
 

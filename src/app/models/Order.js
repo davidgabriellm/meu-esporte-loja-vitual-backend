@@ -9,7 +9,7 @@ class Order extends Model {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4
         },
-        userId: DataTypes.UUID,
+        user_id: DataTypes.UUID,
         total: DataTypes.DECIMAL(10, 2),
         status: DataTypes.STRING
       },
@@ -24,8 +24,8 @@ class Order extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: "userId" });
-    this.hasMany(models.OrderItem, { foreignKey: "orderId" });
+    this.belongsTo(models.User, { foreignKey: "user_id" });
+    this.hasMany(models.OrderItem, { foreignKey: "order_id" });
   }
 }
 

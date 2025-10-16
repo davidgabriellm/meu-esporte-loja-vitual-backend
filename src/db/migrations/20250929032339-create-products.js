@@ -18,15 +18,15 @@ module.exports = {
         defaultValue: 0,
       },
       stock: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 },
-      imageUrl: { type: Sequelize.STRING, allowNull: true },
-      categoryId: {
+      image_url: { type: Sequelize.STRING, allowNull: true },
+      category_id: {
         type: Sequelize.UUID,
         references: { model: "categories", key: "id" },
         onDelete: "SET NULL",
         allowNull: true,
       },
-      createdAt: { allowNull: false, type: Sequelize.DATE },
-      updatedAt: { allowNull: false, type: Sequelize.DATE },
+      created_at: { allowNull: false, type: Sequelize.DATE },
+      updated_at: { allowNull: false, type: Sequelize.DATE },
     });
   },
 

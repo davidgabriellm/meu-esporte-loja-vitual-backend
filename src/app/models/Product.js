@@ -13,8 +13,8 @@ class Product extends Model {
         description: DataTypes.TEXT,
         price: DataTypes.DECIMAL(10, 2),
         stock: DataTypes.INTEGER,
-        imageUrl: DataTypes.STRING,
-        categoryId: DataTypes.UUID
+        image_url: DataTypes.STRING,
+        category_id: DataTypes.UUID
       },
       {
         sequelize,
@@ -27,8 +27,8 @@ class Product extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Category, { foreignKey: "categoryId" });
-    this.hasMany(models.OrderItem, { foreignKey: "productId" });
+    this.belongsTo(models.Category, { foreignKey: "category_id" });
+    this.hasMany(models.OrderItem, { foreignKey: "product_id" });
   }
 }
 

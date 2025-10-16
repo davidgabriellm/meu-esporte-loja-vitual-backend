@@ -49,15 +49,15 @@ class User extends Model {
     return this;
   }
 
-  // Comparar senha enviada com hash
+  
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }
 
   static associate(models) {
-    this.hasMany(models.Address, { foreignKey: "userId" });
-    this.hasMany(models.Order, { foreignKey: "userId" });
-    this.hasMany(models.CartItem, { foreignKey: "userId" });
+    this.hasMany(models.Address, { foreignKey: "user_id" });
+    this.hasMany(models.Order, { foreignKey: "user_id" });
+    this.hasMany(models.CartItem, { foreignKey: "user_id" });
   }
 }
 

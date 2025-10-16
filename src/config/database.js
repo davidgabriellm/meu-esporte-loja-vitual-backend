@@ -5,7 +5,7 @@ module.exports = {
   password: "David2002",
   database: "meu-esporte",
   define: {
-    timestamp: true,
+    timestamps: true,
     underscored: true,
     underscoredAll: true,
   },

@@ -9,12 +9,12 @@ class Address extends Model {
           primaryKey: true,
           defaultValue: DataTypes.UUIDV4
         },
-        userId: DataTypes.UUID,
+        user_id: DataTypes.UUID,
         street: DataTypes.STRING,
         city: DataTypes.STRING,
         state: DataTypes.STRING,
         postalCode: DataTypes.STRING,
-        isDefault: DataTypes.BOOLEAN
+        is_default: DataTypes.BOOLEAN
       },
       {
         sequelize,
@@ -27,7 +27,7 @@ class Address extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: "userId" });
+    this.belongsTo(models.User, { foreignKey: "user_id" });
   }
 }
 
